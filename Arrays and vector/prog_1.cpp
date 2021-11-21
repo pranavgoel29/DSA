@@ -6,4 +6,5 @@ int main()
 {
     system("cls");
     cout<<"Hello World";
+    cout<<"hello";
 }
