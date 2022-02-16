@@ -1,3 +1,6 @@
+// Program to add the node at the beginning of the Linked List.
+
+
 // Head will always store the address of the first node.
 // After running and checking if head is point to NULL or not we will go to next node if it is not NULL.
 // Node is storing the data and the address to the next node.
