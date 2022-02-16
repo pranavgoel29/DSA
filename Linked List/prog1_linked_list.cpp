@@ -22,8 +22,8 @@ class node{
 
     node(int data){
         this->data = data;
-        next = NULL;            // By default we will keep out next pointer NULL and allocate the address to 
-                                // it after we get/store some data in the next node.
+        next = NULL;            // By default we will keep our next pointer NULL.
+                                // And allocate the address to it after we get/store some data in the next node.
     }
 };
 
