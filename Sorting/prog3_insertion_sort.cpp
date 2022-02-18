@@ -24,7 +24,7 @@ void insertionsort(int arr[], int n)                    // Here we are taking 'a
     // If that condition is false then we are breaking out of the loop.
     // At last we are putting the value of the 'current' var at the right place.
 
-    // After First cycle
+    //--------- After First cycle -----------//
 
     /*
     arr[i] = current
@@ -38,7 +38,7 @@ void insertionsort(int arr[], int n)                    // Here we are taking 'a
     arr[0] = current = 4;
     */
 
-   
+
 
     for (int i = 1; i < n; i++)                         
     {                                                           
