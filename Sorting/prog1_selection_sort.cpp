@@ -31,9 +31,16 @@ int main(){
     int input[] = {9,5,7,8,4};                  // Initializing the array.
     int arrsize = sizeof(input) / sizeof(input[0]);             // Storing the size of the array in an int type var, here the size would come in bytes which is then divided by sizeof() one element of array which will eventually gives us the length of the array.
 
+    cout<<"Before sort: ";
+    for (int i = 0; i < arrsize; i++)               // Array before sorting.
+    {
+        cout<<input[i]<<" ";
+    }
+    cout<<"\n"<<endl;
+
     selectionsort(input, arrsize);                    // Calling the selectionsort() function where we are passing the array and size of the array.
 
-
+    cout<<"After sort: ";
     // Printing the sorted array.
     for (int i = 0; i < arrsize; i++)
     {
