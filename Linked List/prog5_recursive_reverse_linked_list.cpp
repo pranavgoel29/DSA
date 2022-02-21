@@ -15,11 +15,12 @@ class node{
 
 node* recursivereverse(node * head)
 {
-    if(head->next==NULL or head==NULL){
+    if(head->next==NULL or head==NULL){                     // Checking if the Linked list is empty or contain only one element, then it will return the head;
         return head;
     }
-    node * shead = recursivereverse(head->next);
-    head->next->next = head;
+
+    node * shead = recursivereverse(head->next);        // Using recursion to set new head as last and 
+    head->next -> next = head;
     head->next = NULL;
     return shead;
 }
@@ -58,7 +59,7 @@ int main()
     cout<<"Linked List: \n";
     printll(head);
 
-    head = recursivereverse(head);
+    head = recursivereverse(head);              // Passing the head to the function so it can use it to set new head. Which then will be saved in the head.
 
     cout<<"\nAfter reverse: \n";
     printll(head);
