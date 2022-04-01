@@ -32,8 +32,42 @@ void insertathead(node * &head, int data)
 }
 
 // ---------- K-Reverse ---------- //
-void (node *&head){
+node* kreverse(node *head, int k){
+    // Base Case
+    if(head == NULL)        // Checking if linked list is empty or not.
+        return NULL;
     
+    // Reverse  the first K nodes;
+    node* prev = NULL;              // Taking a new node named prev as NULL.
+    node* current = head;           // Taking a new node named current to store the value of head to use for reversal.
+    node* temp;
+    int count = 1;
+
+    // This loop will run k-times as we have declared a count variable and we are checking if it is smaller than or equal to K.
+    // And if it is then we are stopping the loop according to it's while condition.
+
+    while(current!=NULL && count <= k)
+    {
+        // Store the next node
+        temp = current->next;
+        // Update the current node
+        current->next = prev;
+
+        // Move one step ahead
+        prev = current;
+        current = temp;
+        count++;                                // After every operation we are just updating our count variable to keep track of the remaining node from K.
+    }
+    
+    // It will check for if temp is having any node left or we can say if there are any nodes left after reversing linked list for k-nodes after one time
+    // And if there are then we are calling the function again and after that we are updating out value for head->next 
+    // Which will eventually link all the fragments which have been reversed.
+
+    if(temp!=NULL){
+        head->next = kreverse(temp,k);      // Keep in mind that this is a recursive call so all the other part of linked list will be getting attached to just take a close look.
+    }
+
+    return prev;
 
 }
 
@@ -58,8 +92,8 @@ int main(){
 
     printll(head);
 
-    // Calling the reverse function
-    
+    // We have to update the head too as we are returning a replacement for head after updating our linked list.
+    head = kreverse(head,2);            // Calling the k-reverse function
 
     printll(head);
 }
